@@ -6,16 +6,13 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 10:55:49 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/25 10:57:49 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 00:27:12 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(const char *s)
-{
-	int res;
+#include "libft.h"
 
-	res = 0;
-	while (s[res])
-		res++;
-	return (res);
+size_t	ft_strlen(const char *s)
+{
+	return ((char *)ft_memchr(s, '\0', -1) - s);
 }

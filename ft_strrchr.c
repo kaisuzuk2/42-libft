@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 15:29:26 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/25 23:55:34 by kaisuzuk         ###   ########.fr       */
+/*   Created: 2025/04/25 23:33:08 by kaisuzuk          #+#    #+#             */
+/*   Updated: 2025/04/25 23:39:18 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t ft_strlcat(char *dst, const char *src, size_t size)
+char *ft_strrchr(const char *s, int c)
 {
-	size_t i;
-	size_t dst_len;
-	size_t src_len;
-	size_t max_len;
+	char *p;
 
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	if (dst_len >= size)
-		return (size + src_len);
-	max_len = size - dst_len - 1;
-	i = 0;
-	while (i < max_len && src[i])
-	{
-		dst[dst_len + i] = src[i];
-		i++;
-	}
-	dst[dst_len + i] = '\0';
-	return (dst_len + src_len);
+	
+}
+
+#include <stdio.h>
+int main(void)
+{
+	
 }
