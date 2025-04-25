@@ -6,12 +6,14 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 09:32:53 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/25 20:04:56 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/25 23:11:26 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+#include <stdlib.h>
+#include <stdint.h>
 
 #endif

@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 13:07:58 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/25 23:14:14 by kaisuzuk         ###   ########.fr       */
+/*   Created: 2025/04/25 21:35:10 by kaisuzuk          #+#    #+#             */
+/*   Updated: 2025/04/25 23:09:41 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
-{
-	size_t i;
-	size_t res;
+#include "libft.h"
 
-	res = 0;
-	while (src[res])
-		res++;
-	i = 0;
-	if (size == 0)
-		return (res);
-	while (i < size - 1 && src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
+void *ft_calloc(size_t nmemb, size_t size)
+{	
+	void *res;
+	if (size != 0 && nmemb > SIZE_MAX / size)
+		return (NULL);
+	res = malloc(nmemb * size);
+	if (res == NULL)
+		return (NULL);
+	memset(res, 0, nmemb * size);
 	return (res);
 }
