@@ -6,13 +6,13 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 17:19:00 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 00:05:07 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 00:56:44 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
-		c &= ~32u;
-	retrun c;
+		c -= ('a' - 'A');
+	return (c);
 }
