@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 13:07:58 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/25 19:20:17 by kaisuzuk         ###   ########.fr       */
+/*   Created: 2025/04/25 19:54:03 by kaisuzuk          #+#    #+#             */
+/*   Updated: 2025/04/25 20:05:04 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t i;
-	size_t res;
-
-	res = 0;
-	while (src[res])
-		res++;
+	const unsigned char *us1;
+	const unsigned char *us2;
 	
+	if (n == 0)
+		return (0);
 	i = 0;
-	if (size == 0)
-		return (res);
-	while (i < size - 1 && src[i])
+	us1 = (const unsigned char *)s1;
+	us2 = (const unsigned char *)s2;
+	while (us1[i] && us2[i] && i < n)
 	{
-		dst[i] = src[i];
+		if (us1[i] != us2[i])
+			return (us1[i] - us2[i]);
 		i++;
 	}
-	dst[i] = '\0';
-	return (res);
+	if (i == n)
+		return (0);
+	else
+		return (us1[i] - us2[i]);
 }

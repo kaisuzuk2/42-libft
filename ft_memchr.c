@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 13:07:58 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/25 19:20:17 by kaisuzuk         ###   ########.fr       */
+/*   Created: 2025/04/25 20:05:21 by kaisuzuk          #+#    #+#             */
+/*   Updated: 2025/04/25 20:22:51 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+void *ft_memchr(const void *s, int c, size_t n)
 {
+	const unsigned char *us;
+	unsigned char uc;
 	size_t i;
-	size_t res;
 
-	res = 0;
-	while (src[res])
-		res++;
-	
+	us = (const unsigned char *)s;
+	uc = (unsigned char)c;
 	i = 0;
-	if (size == 0)
-		return (res);
-	while (i < size - 1 && src[i])
+	while (i < n)
 	{
-		dst[i] = src[i];
+		if (us[i] == uc)
+			return ((void *)&us[i]);
 		i++;
 	}
-	dst[i] = '\0';
-	return (res);
+	return (NULL);
 }

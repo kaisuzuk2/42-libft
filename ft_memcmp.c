@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 13:07:58 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/25 19:20:17 by kaisuzuk         ###   ########.fr       */
+/*   Created: 2025/04/25 20:23:16 by kaisuzuk          #+#    #+#             */
+/*   Updated: 2025/04/25 20:30:15 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
+	const unsigned char *us1;
+	const unsigned char *us2;
 	size_t i;
-	size_t res;
-
-	res = 0;
-	while (src[res])
-		res++;
 	
+	us1 = (const unsigned char *)s1;
+	us2 = (const unsigned char *)s2;
 	i = 0;
-	if (size == 0)
-		return (res);
-	while (i < size - 1 && src[i])
+	while (i < n)
 	{
-		dst[i] = src[i];
+		if (us1[i] != us2[i])
+			return (us1[i] - us2[i]);
 		i++;
-	}
-	dst[i] = '\0';
-	return (res);
+	}	
+	return (0);
 }

@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 13:07:58 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/25 19:20:17 by kaisuzuk         ###   ########.fr       */
+/*   Created: 2025/04/25 20:55:14 by kaisuzuk          #+#    #+#             */
+/*   Updated: 2025/04/25 21:34:20 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+int ft_atoi(const char *nptr)
 {
-	size_t i;
-	size_t res;
+	int sign;
+	int i;
+	int res;
 
-	res = 0;
-	while (src[res])
-		res++;
-	
+	sign = 1;
 	i = 0;
-	if (size == 0)
-		return (res);
-	while (i < size - 1 && src[i])
+	while (nptr[i] == ' ' || (nptr[i] >= '\t' && nptr[i] <= '\r'))
+		i++;
+	if (nptr[i] == '+' || nptr[i] == '-')
 	{
-		dst[i] = src[i];
+		if (nptr[i] == '-')
+			sign *= -1;
 		i++;
 	}
-	dst[i] = '\0';
-	return (res);
+	res = 0;
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		res = (res * 10) + (nptr[i] - '0');
+		i++;
+	}
+	return (res * sign);
 }
