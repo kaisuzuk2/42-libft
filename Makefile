@@ -6,14 +6,15 @@
 #    By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/25 09:40:16 by kaisuzuk          #+#    #+#              #
-#    Updated: 2025/04/25 10:14:19 by kaisuzuk         ###   ########.fr        #
+#    Updated: 2025/04/25 17:48:34 by kaisuzuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = cc 
 FLAG = -Wall -Werror -Wextra -Iincludes
-SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c
+SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
+			ft_strlcat.c ft_toupper.c ft_tolower.c
 OBJS = $(SRCS:%.c=%.o)
 
 all: $(NAME)
