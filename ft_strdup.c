@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 23:09:51 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 20:33:20 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 20:43:34 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ static char	*ft_strcpy(char *dest, const char *src)
 
 char	*ft_strdup(const char *s)
 {
-	size_t size;
-	char *res;
+	size_t	size;
+	char	*res;
 
 	size = ft_strlen(s) + 1;
 	res = (char *)malloc(sizeof(char) * size);

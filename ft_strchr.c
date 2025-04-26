@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 17:48:57 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 11:14:49 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 20:39:39 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ char	*ft_strchr(const char *s, int c)
 		s++;
 	if (*s == (char)c)
 		return ((char *)s);
-	else	
+	else
 		return (NULL);
 }

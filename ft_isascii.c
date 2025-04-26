@@ -6,11 +6,11 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 10:41:50 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/25 23:39:55 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 20:37:25 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-	return (c >= 0 && c < 128); 
+	return (c >= 0 && c < 128);
 }

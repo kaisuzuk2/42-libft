@@ -6,11 +6,11 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 09:54:35 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/25 10:07:32 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 20:37:11 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }

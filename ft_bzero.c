@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 11:29:35 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 20:30:50 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 20:42:57 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t i;
-	unsigned char *p;
+	size_t			i;
+	unsigned char	*p;
 
 	p = (unsigned char *)s;
 	i = 0;

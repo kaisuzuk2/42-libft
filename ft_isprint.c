@@ -6,11 +6,11 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 10:52:28 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/25 23:40:53 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 20:38:01 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	return (0x20 <= c && c < 0x7f);
 }
