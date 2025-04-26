@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/26 19:13:14 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 19:21:23 by kaisuzuk         ###   ########.fr       */
+/*   Created: 2025/04/26 19:21:38 by kaisuzuk          #+#    #+#             */
+/*   Updated: 2025/04/26 19:28:23 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void ft_putstr_fd(char *s, int fd)
 {
-	write(fd, &c, 1);
+	while (*s)
+	{
+		write(fd, s, 1);
+		s++;
+	}
 }
