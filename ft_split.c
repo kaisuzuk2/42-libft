@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 13:54:02 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 20:16:02 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/27 00:26:46 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,73 +18,79 @@ static size_t	ft_word_count(char const *s, char c)
 {
 	size_t	res;
 	int		flg;
-	char	*p;
+	size_t	i;
 
-	p = (char *)s;
 	res = 0;
-	flg = 0;
-	while (*p && (p = ft_strchr(p, c)) != NULL)
+	flg = 1;
+	i = 0;
+	while (s[i])
 	{
-		if (flg)
-			res++;
-		p++;
-		if (*p == c)
+		if (s[i] == c)
 			flg = 1;
-		else
+		else if (flg)
+		{
+			res++;
 			flg = 0;
-		if (!*p)
-			res--;
+		}
+		i++;
 	}
+	printf("size = %zu\n", res);
 	return (res);
 }
 
-static void	ft_free(char **res, size_t size)
+static char	*ft_fill_word(char const **p, char c)
 {
-	size_t	i;
+	char	*res;
+	size_t	str_len;
 
-	i = 0;
-	while (i <= size)
+	str_len = 0;
+	while (**p == c)
+		(*p)++;
+	while ((*p)[str_len])
 	{
-		free(res[i]);
-		i++;
+		if ((*p)[str_len] == c)
+			break ;
+		str_len++;
 	}
-	free(res);
+	res = (char *)malloc(sizeof(char) * (str_len + 1));
+	if (res == NULL)
+		return (NULL);
+	ft_strlcpy(res, *p, str_len + 1);
+	if ((*p)[str_len] != '\0')
+		*p = *p + str_len + 1;
+	return (res);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**res;
-	size_t	res_size;
+	char	**head;
+	char	**tmp;
+	size_t	head_size;
 	size_t	str_size;
 	size_t	i;
-	char	*p;
 
-	res_size = ft_word_count(s, c);
-	res = (char **)malloc(sizeof(char *) * res_size);
-	if (res == NULL)
+	head_size = ft_word_count(s, c);
+	head = (char **)malloc(sizeof(char *) * head_size);
+	if (head == NULL)
 		return (NULL);
-	p = (char *)s;
-	i = 0;
-	while (i < res_size - 1)
+	tmp = head;
+	while (tmp < &head[head_size])
 	{
-		str_size = ((char *)ft_memchr((char *)p, (int)c, -1) - p) + 1;
-		res[i] = (char *)malloc(sizeof(char) * str_size);
-		if (res[i] == NULL)
-			ft_free(res, i);
-		ft_strlcpy(res[i], p, str_size);
-		p = (char *)ft_memchr((char *)p, (int)c, -1);
-		p++;
-		i++;
+		*tmp = ft_fill_word(&s, c);
+		if (tmp++ == NULL)
+		{
+			while (--tmp)
+				free(*tmp);
+			free(tmp);
+			return (NULL);
+		}
 	}
-	str_size = ft_strlen(p) + 1;
-	res[i] = (char *)malloc(sizeof(char) * str_size);
-	ft_strlcpy(res[i], p, str_size);
-	return (res);
+	return (head);
 }
 
 int	main(void)
 {
-	char s[] = "hello world this is a pen";
+	char s[] = "hello world this is a    pen ";
 	char **res = ft_split(s, ' ');
 	for (int i = 0; i < 6; i++)
 		printf("%s\n", res[i]);
