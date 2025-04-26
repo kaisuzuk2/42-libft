@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/26 12:31:38 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 15:52:38 by kaisuzuk         ###   ########.fr       */
+/*   Created: 2025/04/26 17:59:51 by kaisuzuk          #+#    #+#             */
+/*   Updated: 2025/04/26 18:09:35 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdio.h>
-char *ft_strtrim(char const *s1, char const *set)
+#include "libft.h"
+
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char *res;
-	size_t start;
-	size_t end;
 	size_t size;
+	char *res;
+	size_t i;
 	
-	start = 0;
-	while (s1[start] && ft_strchr(set, s1[start]))
-		start++;
-	end = ft_strlen(s1);
-	while (end > start && ft_strchr(set, s1[end - 1]))
-		end--;
-	size = (end - start) + 1;
+	size = ft_strlen(s) + 1;
 	res = (char *)malloc(sizeof(char) * size);
 	if (res == NULL)
 		return (NULL);
-	res = (char *)ft_memcpy(res, (char *)s1 + start, size);
-	res[size - 1] = '\0';
+	i = 0;
+	while (s[i])
+	{
+		res[i] = (*f)(i, s[i]);
+		i++;
+	}
+	res[i] = '\0';
 	return (res);
 }
-

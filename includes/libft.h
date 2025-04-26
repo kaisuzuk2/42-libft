@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 09:32:53 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 00:54:32 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 19:15:00 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <stdlib.h>
 #include <stdint.h>
+#include <unistd.h>
 
 int ft_atoi(const char *nptr);
 void ft_bzero(void *s, size_t n);
