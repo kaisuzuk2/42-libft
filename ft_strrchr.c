@@ -6,19 +6,25 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 23:33:08 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/25 23:39:18 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 10:08:37 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char *ft_strrchr(const char *s, int c)
 {
-	char *p;
-
+	int i;
+	char cc;
+	char *res;
 	
-}
-
-#include <stdio.h>
-int main(void)
-{
-	
+	cc = (char)c;
+	res = NULL;
+	while (*s)
+	{
+		if (*s == cc)
+			res = (char *)s;
+		s++;
+	}
+	if (*s == cc)
+		res = (char *)s;
+	return (res);
 }
