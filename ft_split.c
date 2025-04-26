@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 13:54:02 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 15:24:05 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 20:05:36 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static size_t ft_word_count(char const *s, char c)
 {
 	size_t res;
 	int flg;
+	char *p;
 	
 	p = (char *)s;
 	res = 0;

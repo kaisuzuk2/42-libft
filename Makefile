@@ -6,14 +6,14 @@
 #    By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/25 09:40:16 by kaisuzuk          #+#    #+#              #
-#    Updated: 2025/04/26 11:12:57 by kaisuzuk         ###   ########.fr        #
+#    Updated: 2025/04/26 20:01:19 by kaisuzuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = cc 
 FLAG = -Wall -Werror -Wextra -Iincludes
-SRCS = ft_strlen.c \
+SRCS =	ft_strlen.c \
 		ft_strlcpy.c \
 		ft_strlcat.c \
 		ft_strchr.c \
@@ -35,7 +35,18 @@ SRCS = ft_strlen.c \
 		ft_toupper.c \
 		ft_tolower.c \
 		ft_calloc.c \
-		ft_strdup.c 
+		ft_strdup.c \
+		ft_substr.c \
+		ft_strjoin.c \
+		ft_strtrim.c \
+		ft_split.c \
+		ft_itoa.c \
+		ft_strmapi.c \
+		ft_striteri.c\
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c
 		
 OBJS = $(SRCS:%.c=%.o)
 
