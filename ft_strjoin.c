@@ -6,16 +6,16 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 11:35:26 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 12:31:46 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 20:33:50 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t size;
-	char *res;
+	size_t	size;
+	char	*res;
 
 	size = ft_strlen(s1);
 	size += ft_strlen(s2) + 1;

@@ -6,17 +6,17 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 20:05:21 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 00:26:15 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 20:32:22 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const unsigned char *us;
-	unsigned char uc;
-	size_t i;
+	const unsigned char	*us;
+	unsigned char		uc;
+	size_t				i;
 
 	us = (const unsigned char *)s;
 	uc = (unsigned char)c;

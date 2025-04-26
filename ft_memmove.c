@@ -6,17 +6,17 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 11:50:19 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 11:16:46 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 20:31:05 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char *d;
-	const unsigned char *s;
-	size_t i;
+	unsigned char		*d;
+	const unsigned char	*s;
+	size_t				i;
 
 	d = (unsigned char *)dest;
 	s = (const unsigned char *)src;
@@ -26,7 +26,7 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 		while (i < n)
 		{
 			d[i] = s[i];
-			i++;	
+			i++;
 		}
 	}
 	else
@@ -35,7 +35,7 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 		while (i-- > 0)
 		{
 			d[i] = s[i];
-		}	
+		}
 	}
 	return (dest);
 }

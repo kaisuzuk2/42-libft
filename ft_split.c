@@ -6,20 +6,20 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 13:54:02 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 20:05:36 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 20:16:02 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
 #include <unistd.h>
-#include "libft.h"
 
-static size_t ft_word_count(char const *s, char c)
+static size_t	ft_word_count(char const *s, char c)
 {
-	size_t res;
-	int flg;
-	char *p;
-	
+	size_t	res;
+	int		flg;
+	char	*p;
+
 	p = (char *)s;
 	res = 0;
 	flg = 0;
@@ -38,10 +38,10 @@ static size_t ft_word_count(char const *s, char c)
 	return (res);
 }
 
-static void ft_free(char **res, size_t size)
+static void	ft_free(char **res, size_t size)
 {
-	size_t i;
-	
+	size_t	i;
+
 	i = 0;
 	while (i <= size)
 	{
@@ -51,14 +51,14 @@ static void ft_free(char **res, size_t size)
 	free(res);
 }
 
-char **ft_split(char const*s, char c)
-{	
-	char **res;
-	size_t res_size;
-	size_t str_size;
-	size_t i;
-	char *p;
-	
+char	**ft_split(char const *s, char c)
+{
+	char	**res;
+	size_t	res_size;
+	size_t	str_size;
+	size_t	i;
+	char	*p;
+
 	res_size = ft_word_count(s, c);
 	res = (char **)malloc(sizeof(char *) * res_size);
 	if (res == NULL)
@@ -72,7 +72,7 @@ char **ft_split(char const*s, char c)
 		if (res[i] == NULL)
 			ft_free(res, i);
 		ft_strlcpy(res[i], p, str_size);
-		p = (char *)ft_memchr((char *)p, (int)c,  -1);
+		p = (char *)ft_memchr((char *)p, (int)c, -1);
 		p++;
 		i++;
 	}
@@ -82,7 +82,7 @@ char **ft_split(char const*s, char c)
 	return (res);
 }
 
-int main(void)
+int	main(void)
 {
 	char s[] = "hello world this is a pen";
 	char **res = ft_split(s, ' ');

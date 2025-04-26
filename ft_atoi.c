@@ -6,15 +6,15 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 20:55:14 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/25 21:34:20 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 20:32:51 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
-	int sign;
-	int i;
-	int res;
+	int	sign;
+	int	i;
+	int	res;
 
 	sign = 1;
 	i = 0;

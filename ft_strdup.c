@@ -6,15 +6,15 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 23:09:51 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 11:11:03 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 20:33:20 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char *ft_strcpy(char *dest, const char *src)
+static char	*ft_strcpy(char *dest, const char *src)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (src[i])
@@ -26,7 +26,7 @@ static char *ft_strcpy(char *dest, const char *src)
 	return (dest);
 }
 
-char *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	size_t size;
 	char *res;

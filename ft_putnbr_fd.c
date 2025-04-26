@@ -6,17 +6,17 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 19:44:13 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 19:54:15 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 20:35:38 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
+#include <stdio.h>
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char c;
-	
+	char	c;
+
 	if (n < 0)
 	{
 		write(fd, "-", 1);
@@ -32,6 +32,6 @@ void ft_putnbr_fd(int n, int fd)
 	{
 		ft_putnbr_fd(n / 10, fd);
 	}
-	c = n % 10 + '0';	
-	write(fd, &c , 1);
+	c = n % 10 + '0';
+	write(fd, &c, 1);
 }

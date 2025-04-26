@@ -6,11 +6,11 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 17:46:50 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 00:57:48 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 20:31:51 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		c += ('a' - 'A');

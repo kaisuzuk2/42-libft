@@ -6,19 +6,20 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 12:31:38 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 15:52:38 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 20:33:59 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-char *ft_strtrim(char const *s1, char const *set)
+
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char *res;
-	size_t start;
-	size_t end;
-	size_t size;
-	
+	char	*res;
+	size_t	start;
+	size_t	end;
+	size_t	size;
+
 	start = 0;
 	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
@@ -33,4 +34,3 @@ char *ft_strtrim(char const *s1, char const *set)
 	res[size - 1] = '\0';
 	return (res);
 }
-

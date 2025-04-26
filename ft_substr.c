@@ -6,18 +6,18 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 10:09:53 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 11:37:54 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 20:33:37 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t slen;
-	size_t size;
-	char *res;
-	
+	size_t	slen;
+	size_t	size;
+	char	*res;
+
 	slen = ft_strlen(s);
 	if (start >= slen)
 	{

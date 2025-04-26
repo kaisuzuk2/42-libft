@@ -6,18 +6,18 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:54:03 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 11:15:55 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 20:32:05 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
-	const unsigned char *us1;
-	const unsigned char *us2;
-	
+	size_t				i;
+	const unsigned char	*us1;
+	const unsigned char	*us2;
+
 	if (n == 0)
 		return (0);
 	i = 0;

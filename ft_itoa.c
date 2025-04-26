@@ -6,16 +6,16 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 15:27:23 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 17:58:31 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 20:34:37 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t ft_count_size(long int un)
+static size_t	ft_count_size(long int un)
 {
-	size_t res;
-	
+	size_t	res;
+
 	res = 0;
 	if (un <= 0)
 	{
@@ -30,7 +30,7 @@ static size_t ft_count_size(long int un)
 	return (res);
 }
 
-static void ft_itoa_support(long int un, char *res, size_t size)
+static void	ft_itoa_support(long int un, char *res, size_t size)
 {
 	size--;
 	if (un >= 10)
@@ -38,12 +38,12 @@ static void ft_itoa_support(long int un, char *res, size_t size)
 	res[size - 1] = (un % 10) + '0';
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	size_t size;
-	char *res;
-	long int un;
-	
+	size_t		size;
+	char		*res;
+	long int	un;
+
 	un = (long)n;
 	size = ft_count_size(un) + 1;
 	res = (char *)malloc(sizeof(char) * size);
