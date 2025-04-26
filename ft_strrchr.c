@@ -6,13 +6,14 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 23:33:08 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 10:08:37 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 11:15:32 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char *ft_strrchr(const char *s, int c)
 {
-	int i;
 	char cc;
 	char *res;
 	

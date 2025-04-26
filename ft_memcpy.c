@@ -6,9 +6,11 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 11:33:41 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/25 13:08:56 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 11:16:37 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {

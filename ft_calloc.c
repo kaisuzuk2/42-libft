@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 21:35:10 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/25 23:09:41 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 11:17:49 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ void *ft_calloc(size_t nmemb, size_t size)
 	res = malloc(nmemb * size);
 	if (res == NULL)
 		return (NULL);
-	memset(res, 0, nmemb * size);
+	ft_memset(res, 0, nmemb * size);
 	return (res);
 }

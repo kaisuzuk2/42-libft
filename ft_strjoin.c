@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 11:29:35 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 11:16:24 by kaisuzuk         ###   ########.fr       */
+/*   Created: 2025/04/26 11:35:26 by kaisuzuk          #+#    #+#             */
+/*   Updated: 2025/04/26 12:31:46 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+char *ft_strjoin(char const *s1, char const *s2)
 {
-	size_t i;
-	unsigned char *p;
+	size_t size;
+	char *res;
 
-	p = (unsigned char *)s;
-	i = 0;
-	while (i < n)
-	{
-		p[i] = '\0';
-		i++;
-	}
+	size = ft_strlen(s1);
+	size += ft_strlen(s2) + 1;
+	res = (char *)malloc(sizeof(char) * size);
+	if (res == NULL)
+		return (NULL);
+	res[0] = '\0';
+	ft_strlcpy(res, s1, size);
+	ft_strlcat(res, s2, size);
+	return (res);
 }

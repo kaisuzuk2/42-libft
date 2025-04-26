@@ -6,9 +6,11 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 15:29:26 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/25 23:55:34 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 12:25:52 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -23,11 +25,11 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 		return (size + src_len);
 	max_len = size - dst_len - 1;
 	i = 0;
-	while (i < max_len && src[i])
+	while (i < size)
 	{
 		dst[dst_len + i] = src[i];
 		i++;
 	}
-	dst[dst_len + i] = '\0';
+	dst[i] = '\0';
 	return (dst_len + src_len);
 }

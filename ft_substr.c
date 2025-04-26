@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 23:09:51 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 11:11:03 by kaisuzuk         ###   ########.fr       */
+/*   Created: 2025/04/26 10:09:53 by kaisuzuk          #+#    #+#             */
+/*   Updated: 2025/04/26 11:37:54 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char *ft_strcpy(char *dest, const char *src)
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int i;
-
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = src[i];
-	return (dest);
-}
-
-char *ft_strdup(const char *s)
-{
+	size_t slen;
 	size_t size;
 	char *res;
-
-	size = ft_strlen(s) + 1;
-	res = (char *)malloc(sizeof(char) * size);
-	if (res == NULL)
-		return (NULL);
-	ft_strcpy(res, s);
+	
+	slen = ft_strlen(s);
+	if (start >= slen)
+	{
+		res = (char *)ft_calloc(1, sizeof(char));
+		if (res == NULL)
+			return (NULL);
+	}
+	else
+	{
+		if (slen - start > len)
+			size = len;
+		else
+			size = slen - start;
+		size += 1;
+		res = (char *)malloc(sizeof(char) * size);
+		if (res == NULL)
+			return (NULL);
+		ft_strlcpy(res, (s + start), size);
+	}
 	return (res);
 }

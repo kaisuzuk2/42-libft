@@ -6,9 +6,11 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 20:23:16 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/25 20:30:15 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/26 11:17:02 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
