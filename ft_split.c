@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 13:54:02 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/27 15:29:10 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/27 22:03:00 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,20 @@ static size_t	ft_word_count(char const *s, char c)
 {
 	size_t	res;
 	int		flg;
-	size_t	i;
 
 	res = 0;
 	flg = 1;
-	i = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] == c)
+		if (*s == c)
 			flg = 1;
 		else if (flg)
 		{
 			res++;
 			flg = 0;
 		}
-		i++;
+		s++;
 	}
-	printf("size = %zu\n", res);
 	return (res);
 }
 
@@ -56,9 +53,15 @@ static char	*ft_fill_word(char const **p, char c)
 	if (res == NULL)
 		return (NULL);
 	ft_strlcpy(res, *p, str_len + 1);
-	if ((*p)[str_len] != '\0')
-		*p = *p + str_len + 1;
+	*p = *p + str_len;
 	return (res);
+}
+
+static void	ft_free(char **current, char **head)
+{
+	while (--current > head)
+		free(*current);
+	free(current);
 }
 
 char	**ft_split(char const *s, char c)
@@ -67,22 +70,39 @@ char	**ft_split(char const *s, char c)
 	char	**tmp;
 	size_t	head_size;
 
-	head_size = ft_word_count(s, c);
-	head = (char **)malloc(sizeof(char *) * (head_size + 1));
+	head_size = ft_word_count(s, c) + 1;
+	head = (char **)malloc(sizeof(char *) * (head_size));
 	if (head == NULL)
 		return (NULL);
 	tmp = head;
 	while (tmp < &head[head_size])
 	{
 		*tmp = ft_fill_word(&s, c);
-		if (tmp++ == NULL)
+		if (*tmp == NULL)
 		{
-			while (--tmp)
-				free(*tmp);
-			free(tmp);
+			ft_free(++tmp, head);
 			return (NULL);
 		}
+		tmp++;
 	}
-	
+	*tmp = (char *)malloc(sizeof(char) * 1);
+	if (*tmp == NULL)
+		ft_free(++tmp, head);
+	**tmp = '\0';
 	return (head);
 }
+
+// #include <stdio.h>
+// int main(void)
+// {
+// 	char str[] = "hello world this is a pen";
+// 	char c = ' ';
+// 	char **res = ft_split(str, c);
+// 	if (res == NULL)
+// 		return (0);
+// 	for (int i = 0; res[i]; i++)
+// 		printf("%s\n", res[i]);
+// 	for (int i = 0; res[i]; i++)
+// 		free(res[i]);
+// 	free(res);
+// }
