@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 19:44:13 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/27 15:01:15 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/27 15:35:22 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	ft_putstr_fd(fd, ft_atoi(n));
+	ft_putstr_fd(ft_itoa(n), fd);
 }

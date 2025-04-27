@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 15:29:26 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 20:31:32 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/27 19:44:40 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		return (size + src_len);
 	max_len = size - dst_len - 1;
 	i = 0;
-	while (i < size)
+	while (i < src_len && i < max_len)
 	{
 		dst[dst_len + i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
+	dst[dst_len + i] = '\0';
 	return (dst_len + src_len);
 }
