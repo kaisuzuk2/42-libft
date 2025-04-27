@@ -6,31 +6,29 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 20:55:14 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 20:32:51 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/27 14:19:17 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char *nptr)
 {
 	int	sign;
-	int	i;
 	int	res;
 
 	sign = 1;
-	i = 0;
-	while (nptr[i] == ' ' || (nptr[i] >= '\t' && nptr[i] <= '\r'))
-		i++;
-	if (nptr[i] == '+' || nptr[i] == '-')
+	while (*nptr == ' ' || (*nptr >= '\t' && *nptr <= '\r'))
+		nptr++;
+	if (*nptr == '+' || *nptr == '-')
 	{
-		if (nptr[i] == '-')
+		if (*nptr == '-')
 			sign *= -1;
-		i++;
+		nptr++;
 	}
 	res = 0;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	while (*nptr >= '0' && *nptr <= '9')
 	{
-		res = (res * 10) + (nptr[i] - '0');
-		i++;
+		res = (res * 10) + (*nptr - '0');
+		nptr++;
 	}
 	return (res * sign);
 }

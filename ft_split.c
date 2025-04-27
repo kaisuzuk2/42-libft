@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 13:54:02 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/27 00:26:46 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/27 15:13:14 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ char	**ft_split(char const *s, char c)
 	char	**tmp;
 	size_t	head_size;
 	size_t	str_size;
-	size_t	i;
 
 	head_size = ft_word_count(s, c);
 	head = (char **)malloc(sizeof(char *) * head_size);
@@ -86,12 +85,4 @@ char	**ft_split(char const *s, char c)
 		}
 	}
 	return (head);
-}
-
-int	main(void)
-{
-	char s[] = "hello world this is a    pen ";
-	char **res = ft_split(s, ' ');
-	for (int i = 0; i < 6; i++)
-		printf("%s\n", res[i]);
 }
