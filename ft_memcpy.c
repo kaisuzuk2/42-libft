@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 11:33:41 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/27 15:00:49 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/28 00:23:50 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const char	*s;
 	size_t		i;
 
+	if (dest == NULL && src == NULL)
+		return (dest);
 	p = (char *)dest;
 	s = (const char *)src;
 	i = 0;

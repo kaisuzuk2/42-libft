@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 19:44:13 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/27 22:00:49 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/28 00:47:26 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,17 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char *out;
-
-	out = ft_itoa(n);
-	ft_putstr_fd(out, fd);
-	free(out);
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		if (n == -2147483648)
+		{
+			ft_putchar_fd('2', fd);
+			n = -147483648;
+		}
+		n *= -1;
+	}
+	if (n >= 10)
+		ft_putnbr_fd(n / 10, fd);
+	ft_putchar_fd(n % 10 + '0', fd);
 }

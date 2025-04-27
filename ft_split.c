@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 13:54:02 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/27 22:03:00 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/27 23:34:05 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ char	**ft_split(char const *s, char c)
 	char	**tmp;
 	size_t	head_size;
 
-	head_size = ft_word_count(s, c) + 1;
-	head = (char **)malloc(sizeof(char *) * (head_size));
+	head_size = ft_word_count(s, c);
+	head = (char **)malloc(sizeof(char *) * (head_size + 1));
 	if (head == NULL)
 		return (NULL);
 	tmp = head;
@@ -85,10 +85,7 @@ char	**ft_split(char const *s, char c)
 		}
 		tmp++;
 	}
-	*tmp = (char *)malloc(sizeof(char) * 1);
-	if (*tmp == NULL)
-		ft_free(++tmp, head);
-	**tmp = '\0';
+	*tmp = NULL;
 	return (head);
 }
 
