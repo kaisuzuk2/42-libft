@@ -6,7 +6,7 @@
 #    By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/25 09:40:16 by kaisuzuk          #+#    #+#              #
-#    Updated: 2025/04/27 19:47:17 by kaisuzuk         ###   ########.fr        #
+#    Updated: 2025/04/28 14:03:01 by kaisuzuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,13 +47,25 @@ SRCS =	ft_strlen.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c
-		
+B_SRCS=	ft_lstnew.c \
+	 ft_lstadd_front.c \
+	 ft_lstsize.c \
+	 ft_lstlast.c \
+	 ft_lstadd_back.c \
+	 ft_lstdelone.c \
+	 ft_lstclear.c \
+	 ft_lstiter.c \
+	 ft_lstmap.c
 OBJS = $(SRCS:%.c=%.o)
+BOBJS = $(B_SRCS:%.c=%.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
+
+bonus: $(NAME) $(BOBJS)
+	ar -rcs $(NAME) $(BOBJS)
 	
 %.o: %.c
 	$(CC) -c $(FLAG) $< -o $@

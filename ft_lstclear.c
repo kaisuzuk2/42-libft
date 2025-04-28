@@ -6,16 +6,16 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 12:04:12 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/28 13:09:34 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/28 13:52:40 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *p;
-	t_list *next;
+	t_list	*p;
+	t_list	*next;
 
 	if (lst == NULL)
 		return ;
@@ -24,7 +24,7 @@ void ft_lstclear(t_list **lst, void (*del)(void *))
 	{
 		next = p->next;
 		ft_lstdelone(p, (*del));
-		p = next;	
+		p = next;
 	}
 	*lst = NULL;
 }

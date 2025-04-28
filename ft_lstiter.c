@@ -6,13 +6,13 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 13:10:47 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/28 13:13:03 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/28 13:52:06 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst)
 	{
