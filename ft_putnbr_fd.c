@@ -6,12 +6,11 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 19:44:13 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/28 00:47:26 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/28 14:50:17 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {

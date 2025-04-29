@@ -6,12 +6,11 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 12:31:38 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 20:33:59 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/28 14:51:00 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

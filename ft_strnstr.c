@@ -6,12 +6,11 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 20:30:33 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/26 20:32:43 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/28 14:51:17 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

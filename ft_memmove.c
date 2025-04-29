@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 11:50:19 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/28 00:48:53 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/28 14:47:39 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const char	*s;
 	size_t		i;
 
-	if (dest == NULL && src == NULL)
+	if (dest == NULL || src == NULL)
 		return (dest);
 	d = (char *)dest;
 	s = (const char *)src;

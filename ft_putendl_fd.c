@@ -6,12 +6,11 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 19:29:17 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/27 15:42:23 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/04/28 14:50:12 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	ft_putendl_fd(char *s, int fd)
 {
