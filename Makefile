@@ -6,7 +6,7 @@
 #    By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/25 09:40:16 by kaisuzuk          #+#    #+#              #
-#    Updated: 2025/04/28 14:03:01 by kaisuzuk         ###   ########.fr        #
+#    Updated: 2025/04/29 17:16:21 by kaisuzuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,9 @@ SRCS =	ft_strlen.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
-		ft_putnbr_fd.c
+		ft_putnbr_fd.c \
+				ft_putchar.c \
+				ft_putstr.c
 B_SRCS=	ft_lstnew.c \
 	 ft_lstadd_front.c \
 	 ft_lstsize.c \
@@ -78,4 +80,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY:  clean fclean re
+.PHONY:  clean fclean bonus re
