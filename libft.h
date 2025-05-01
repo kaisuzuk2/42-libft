@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 09:32:53 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/04/29 17:15:16 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/05/01 12:05:11 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,11 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-
-int ft_putchar(int c);
+int					ft_putnbr(int n);
+char				*ft_strreverse(char *str);
+int					ft_convert_to_decimal(char *format, int base);
 int ft_putstr(const char *str);
+int ft_putchar(char c);
+
+
 #endif

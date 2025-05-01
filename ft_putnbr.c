@@ -1,18 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/01 10:59:54 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/05/01 11:00:26 by kaisuzuk         ###   ########.fr       */
+/*   Created: 2025/04/30 17:05:37 by kaisuzuk          #+#    #+#             */
+/*   Updated: 2025/05/01 11:28:06 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_putchar(char c)
+int	ft_putnbr(int n)
 {
-	return (write(1, &c, 1));
+	int res;
+	int i;
+	char buf[12];
+	unsigned int un;
+
+	res = 0;
+	i = 11;
+	un = n;
+	if (un < 0)
+		un *= -1;
+	buf[i] = '\0';
+	while (1)
+	{
+		buf[--i] = un % 10 + '0';
+		un /= 10;
+		res++;
+		if (!un)
+			break ;
+	}
+	if (n < 0)
+		buf[i] = '-';
+	ft_putstr(&buf[i]);
+	return (12 - i);
 }
